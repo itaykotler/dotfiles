@@ -1,0 +1,17 @@
+updating rvm
+============
+rvm get latest
+
+
+gem install
+-----------
+gem install pry
+gem install pry-doc
+gem install pry-debugger
+gem install pry-stack_explorer
+gem install awesome_print
+
+
+
+
+
