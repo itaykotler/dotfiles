@@ -1,0 +1,5 @@
+# keys
+C-g: "make config DIST="
+
+# settings
+set completion-ignore-case On
