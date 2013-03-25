@@ -1,5 +1,7 @@
 require 'logger'
 require 'fileutils'
+require 'awesome_print'
+
 
 @logger = Logger.new(STDOUT)
 @logger.level = Logger::DEBUG
