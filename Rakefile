@@ -75,7 +75,7 @@ def link_already_there?(target, source)
   return true
 end
 
-desc 'checking for installed software'
+desc 'Check is all needed software is installed'
 task :check do
   log.debug('tmux: checking ...')
   tmux_ver = `tmux -V`
