@@ -2,6 +2,8 @@ require 'logger'
 require 'fileutils'
 require 'awesome_print'
 
+# import Rakefiles from the subdirs
+Dir.glob("*/Rakefile").each {|r| import r}
 
 @logger = Logger.new(STDOUT)
 @logger.level = Logger::DEBUG
