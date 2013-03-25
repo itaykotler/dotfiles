@@ -35,7 +35,7 @@
 
   # diff
   d = diff                          # diff unstaged changes
-  dt = difftool                     # diff using a difftool
+  dt = difftool --no-prompt          # diff using a difftool
   dc = diff --cached                # diff staged changes
   last = diff HEAD^                 # diff last committed change
 
