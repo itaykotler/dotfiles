@@ -15,12 +15,13 @@ def log
   @logger
 end
 
-task :default do
-  puts 'run: rake check'
+desc 'Init and update submodules.'
+task :submodules do
+  `git submodule update --init`
 end
 
 desc 'Install configuration, binaries, plagins, etc.'
-task :install do
+task :install => [:submodules] do
   linkables.each do |linkable|
     file = linkable.split('/').last
     source = "#{ENV["PWD"]}/#{linkable}"
