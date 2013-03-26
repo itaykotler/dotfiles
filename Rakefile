@@ -26,33 +26,8 @@ task :install do
     source = "#{ENV["PWD"]}/#{linkable}"
     target = "#{ENV["HOME"]}/.#{file}"
 
-    log.info("link: #{target} -> #{source}")
+    install_one_link(target, source)
 
-    if link_already_there?(target, source)
-      log.debug('the link is already there, skiping.')
-      log.info('OK')
-      next
-    end
-
-    if File.exists?(target)
-      log.info('target exists, do you want to (o)verwrite or (s)kip?')
-      case STDIN.gets.chomp
-      when 'o'
-        log.info('will overwrite');
-      when 's'
-        log.info('will skip')
-        next
-      else
-        log.info('did not understand the input, cowardly skiping ...')
-        next
-      end
-      log.debug("removing #{target}")
-      FileUtils.rm_rf(target)
-    end
-
-    log.debug("creating link #{target} -> #{source}")
-    `ln -s "#{source}" "#{target}"`
-    log.info('OK')
   end
 end
 
@@ -60,6 +35,7 @@ def linkables
   linkables = []
   linkables += Dir.glob('git/*')
   linkables += Dir.glob('tmux/*')
+  linkables += Dir.glob('vim/*')
   # linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
   # linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)')
   # linkables += Dir.glob('ctags/*') if want_to_install?('ctags config (better js/ruby support)')
@@ -73,6 +49,37 @@ def link_already_there?(target, source)
   return false unless File.symlink?(target)
   return false unless File.identical?(target, source)
   return true
+end
+
+def install_one_link(target, source)
+
+    log.info("link: #{target} -> #{source}")
+
+    if link_already_there?(target, source)
+      log.debug('the link is already there, skiping.')
+      log.info('link: OK')
+      return
+    end
+
+    if File.exists?(target)
+      log.info('target exists, do you want to (o)verwrite or (s)kip?')
+      case STDIN.gets.chomp
+      when 'o'
+        log.info('will overwrite');
+      when 's'
+        log.info('will skip')
+        return
+      else
+        log.info('did not understand the input, cowardly skiping ...')
+        return
+      end
+      log.debug("removing #{target}")
+      FileUtils.rm_rf(target)
+    end
+
+    log.debug("creating link #{target} -> #{source}")
+    `ln -s "#{source}" "#{target}"`
+    log.info('link: OK')
 end
 
 desc 'Check is all needed software is installed'
