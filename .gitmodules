@@ -4,3 +4,6 @@
 [submodule "vim/vim/bundle/skwp-vim-easymotion"]
 	path = vim/vim/bundle/skwp-vim-easymotion
 	url = https://github.com/skwp/vim-easymotion.git
+[submodule "dot_files"]
+	path = dot_files
+	url = https://github.com/ronyrus/dot_files.git
