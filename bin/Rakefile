@@ -1,0 +1,27 @@
+require 'fileutils'
+
+task :install do
+  install_reattach_to_user_namespace
+  install_git_scripts
+end
+
+def install_reattach_to_user_namespace
+
+  bin_file = 'reattach-to-user-namespace'
+  FileUtils.cd("#{File.dirname(__FILE__)}/source/tmux-MacOSX-pasteboard") do
+    `make "#{bin_file}"`
+    source = File.absolute_path(bin_file)
+    target = "#{ENV["HOME"]}/bin/#{bin_file}"
+    install_one_link(target, source)
+  end
+end
+
+def install_git_scripts
+
+  bin_file = 'git-delete-submodule'
+  FileUtils.cd("#{File.dirname(__FILE__)}/source/cespare-git-scripts") do
+    source = File.absolute_path(bin_file)
+    target = "#{ENV["HOME"]}/bin/#{bin_file}"
+    install_one_link(target, source)
+  end
+end
