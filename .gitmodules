@@ -7,3 +7,6 @@
 [submodule "dot_files"]
 	path = dot_files
 	url = https://github.com/ronyrus/dot_files.git
+[submodule "bin/source/cespare-git-scripts"]
+	path = bin/source/cespare-git-scripts
+	url = https://github.com/cespare/git-scripts.git
