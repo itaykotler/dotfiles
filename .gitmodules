@@ -10,3 +10,12 @@
 [submodule "vim/vim/bundle/tpope-vim-pathogen"]
 	path = vim/vim/bundle/tpope-vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim/vim/bundle/skwp-vim-colors-solarized"]
+	path = vim/vim/bundle/skwp-vim-colors-solarized
+	url = https://github.com/skwp/vim-colors-solarized.git
+[submodule "vim/vim/bundle/tpope-vim-fugitive"]
+	path = vim/vim/bundle/tpope-vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim/bundle/scrooloose-nerdtree"]
+	path = vim/vim/bundle/scrooloose-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
