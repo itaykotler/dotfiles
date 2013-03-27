@@ -111,6 +111,5 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
-[user]
-	name = Rony Kelner
-	email = ronyrus@gmail.com
+[include]
+	path = ~/.gitconfig.local
