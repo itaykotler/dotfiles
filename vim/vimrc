@@ -32,6 +32,9 @@ set autoread                    "Reload files changed outside vim
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
+" Q is for entering the Ex mode, and we don't like to be there
+nnoremap Q <nop>
+
 syntax on             " Enable syntax highlighting
 
 set showmatch		"show matching parenthesis
