@@ -15,20 +15,24 @@ def log
   @logger
 end
 
-desc 'Init and update submodules.'
-task :submodules do
-  `git submodule update --init`
-end
-
 desc 'Install configuration, binaries, plagins, etc.'
-task :install => [:submodules] do
+task :install do
   linkables.each do |linkable|
     file = linkable.split('/').last
     source = "#{ENV["PWD"]}/#{linkable}"
     target = "#{ENV["HOME"]}/.#{file}"
 
     install_one_link(target, source)
+  end
 
+  install_vundle()
+end
+
+def install_vundle
+  return if File.exist?("#{File.dirname(__FILE__)}/vim/vim/bundle/vundle")
+
+  FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
+    `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
   end
 end
 
