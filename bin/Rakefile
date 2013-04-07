@@ -3,7 +3,7 @@ require 'fileutils'
 task :install do
   FileUtils.mkdir("#{ENV["HOME"]}/bin") unless File.exist?("#{ENV["HOME"]}/bin")
 
-  install_reattach_to_user_namespace
+  install_reattach_to_user_namespace if RUBY_PLATFORM.downcase.include?("darwin")
   install_git_scripts
 end
 
