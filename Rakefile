@@ -33,7 +33,7 @@ def install_vundle
 
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
     `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
-    `vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall
+    `vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
   end
 end
 
