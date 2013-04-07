@@ -26,15 +26,18 @@ task :install do
   end
 
   install_vundle()
+  update_vundle()
 end
 
 def install_vundle
   return if File.exist?("#{File.dirname(__FILE__)}/vim/vim/bundle/vundle")
-
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
     `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
-    `vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
   end
+end
+
+def update_vundle
+  `vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
 end
 
 def linkables
