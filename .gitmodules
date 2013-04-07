@@ -1,21 +1,6 @@
 [submodule "bin/source/tmux-MacOSX-pasteboard"]
 	path = bin/source/tmux-MacOSX-pasteboard
 	url = https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
-[submodule "vim/vim/bundle/skwp-vim-easymotion"]
-	path = vim/vim/bundle/skwp-vim-easymotion
-	url = https://github.com/skwp/vim-easymotion.git
 [submodule "bin/source/cespare-git-scripts"]
 	path = bin/source/cespare-git-scripts
 	url = https://github.com/cespare/git-scripts.git
-[submodule "vim/vim/bundle/tpope-vim-pathogen"]
-	path = vim/vim/bundle/tpope-vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/vim/bundle/skwp-vim-colors-solarized"]
-	path = vim/vim/bundle/skwp-vim-colors-solarized
-	url = https://github.com/skwp/vim-colors-solarized.git
-[submodule "vim/vim/bundle/tpope-vim-fugitive"]
-	path = vim/vim/bundle/tpope-vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/vim/bundle/scrooloose-nerdtree"]
-	path = vim/vim/bundle/scrooloose-nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
