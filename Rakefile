@@ -102,3 +102,6 @@ task :check do
   end
 end
 
+def submodules_update
+  `git submodule update --init`
+end
