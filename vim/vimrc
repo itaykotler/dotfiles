@@ -43,9 +43,6 @@ set autoread                    "Reload files changed outside vim
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-" Q is for entering the Ex mode, and we don't like to be there
-nnoremap Q <nop>
-
 syntax on             " Enable syntax highlighting
 
 set showmatch		"show matching parenthesis
@@ -180,8 +177,8 @@ set laststatus=2
 
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=10
+set scrolloff=3         "Start scrolling when we're x lines away from margins
+set sidescrolloff=5
 set sidescroll=1
 
 "===============================================================================
