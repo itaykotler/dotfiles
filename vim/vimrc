@@ -73,15 +73,12 @@ set autoindent
 set smartindent
 set smarttab
 set shiftwidth=2
-set softtabstop=2
-set tabstop=2
 set expandtab
 
 " Ruby
-"autocmd FileType ruby set tabstop=2
-"autocmd FileType ruby set shiftwidth=2
-"autocmd FileType ruby set expandtab
-"autocmd FileType ruby set softtabstop=2
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set softtabstop=2
 
 " Set status line
 "set statusline=[%02n]%y%f\ %(\[%M%R%H]%)%=\ %4l,%02c%2V\ %P%*
@@ -381,6 +378,23 @@ function! TokenUnderCursor(is_fname)
 	return strpart(line, begpos+1, endpos-begpos-1)
 endfunction
 
+" Jungo stuff
+set cinoptions=:0,(s,u0,U1
+"unmap Jungo mapped keys that I don't need
+unmap <F3>
+unmap <F4>
+map f <nop>
+unmap f
+
+" disable jungo stuff
+let g:dont_load_vimispell=1
+
+" additional filetypes
+autocmd BufNewFile,BufRead *.csv setlocal filetype=csv
+
+" adjust C code settings
+autocmd FileType c setlocal textwidth=80
+autocmd FileType c setlocal shiftwidth=4
 
 
 
