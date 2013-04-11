@@ -37,7 +37,7 @@ def install_vundle
 end
 
 def update_vundle
-  `vim --noplugin -u vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
+  `vim --noplugin -u vim/vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
 end
 
 def linkables
