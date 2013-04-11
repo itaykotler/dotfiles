@@ -387,6 +387,9 @@ unmap <F4>
 map f <nop>
 unmap f
 
+noremap <F2> :NERDTreeTabsToggle<return>
+noremap <F3> :TagbarToggle<return>
+
 " disable jungo stuff
 let g:dont_load_vimispell=1
 
