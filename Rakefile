@@ -17,6 +17,13 @@ end
 
 desc 'Install configuration, binaries, plagins, etc.'
 task :install do
+  log.info 'Checking for updates ...'
+  if self_update_needed?
+    log.info 'Updates are available. Please run \'git pull\''
+  else
+    log.info 'OK'
+  end
+
   linkables.each do |linkable|
     file = linkable.split('/').last
     source = "#{ENV["PWD"]}/#{linkable}"
@@ -111,4 +118,11 @@ end
 
 def submodules_update
   `git submodule update --init`
+end
+
+def self_update_needed?
+  `git remote update`
+  status = `git status -b --porcelain`
+  #status =~ /\[ahead \d+\]/
+  status =~ /\[behind \d+\]/
 end
