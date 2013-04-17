@@ -29,6 +29,22 @@ task :install do
   update_vundle()
 end
 
+desc 'Check is all needed software is installed'
+task :check do
+  log.debug('tmux: checking ...')
+  tmux_ver = `tmux -V`
+  if tmux_ver.nil? or tmux_ver.empty?
+    log.debug('tmux: FAIL')
+  else
+    log.debug("tmux: OK (found version:#{tmux_ver.strip!})")
+  end
+end
+
+desc 'Update vim bundles managed by vundle.'
+task :update_vundles do 
+  update_vundle
+end
+
 def install_vundle
   return if File.exist?("#{File.dirname(__FILE__)}/vim/vim/bundle/vundle")
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
@@ -61,44 +77,33 @@ end
 
 def install_one_link(target, source)
 
-    log.info("link: #{target} -> #{source}")
+  log.info("link: #{target} -> #{source}")
 
-    if link_already_there?(target, source)
-      log.debug('the link is already there, skiping.')
-      log.info('link: OK')
+  if link_already_there?(target, source)
+    log.debug('the link is already there, skiping.')
+    log.info('link: OK')
+    return
+  end
+
+  if File.exists?(target)
+    log.info('target exists, do you want to (o)verwrite or (s)kip?')
+    case STDIN.gets.chomp
+    when 'o'
+      log.info('will overwrite');
+    when 's'
+      log.info('will skip')
+      return
+    else
+      log.info('did not understand the input, cowardly skiping ...')
       return
     end
-
-    if File.exists?(target)
-      log.info('target exists, do you want to (o)verwrite or (s)kip?')
-      case STDIN.gets.chomp
-      when 'o'
-        log.info('will overwrite');
-      when 's'
-        log.info('will skip')
-        return
-      else
-        log.info('did not understand the input, cowardly skiping ...')
-        return
-      end
-      log.debug("removing #{target}")
-      FileUtils.rm_rf(target)
-    end
-
-    log.debug("creating link #{target} -> #{source}")
-    `ln -s "#{source}" "#{target}"`
-    log.info('link: OK')
-end
-
-desc 'Check is all needed software is installed'
-task :check do
-  log.debug('tmux: checking ...')
-  tmux_ver = `tmux -V`
-  if tmux_ver.nil? or tmux_ver.empty?
-    log.debug('tmux: FAIL')
-  else
-    log.debug("tmux: OK (found version:#{tmux_ver.strip!})")
+    log.debug("removing #{target}")
+    FileUtils.rm_rf(target)
   end
+
+  log.debug("creating link #{target} -> #{source}")
+  `ln -s "#{source}" "#{target}"`
+  log.info('link: OK')
 end
 
 def submodules_update

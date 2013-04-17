@@ -103,39 +103,9 @@ set nofoldenable        "dont fold by default
 "===============================================================================
 " Colors stuff
 "===============================================================================
-" number of colors supported by the terminal
-set t_Co=256
 
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 
-"if has("gui_running")
-"    set background=light
-"else
-"    set background=dark
-"endif
-
-set background=light
-"set background=dark
-
-colorscheme solarized
-"colorscheme peachpuff
-"colorscheme yella
-"colorscheme xoria256
-
-"===============================================================================
-" Fonts
-"===============================================================================
-if has("gui_running")
-    if has('mac') || has('macunix')
-      set guifont=Anonymous\ Pro:h18
-    elseif has('unix')
-      "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
-      set guifont=Anonymous\ Pro\ 14
-      "set guifont=Monaco:h14
-      "set guifont=Courier New:h13
-      "set guifont=Menlo:h14
-    endif
-endif
 "===============================================================================
 " FileType
 "===============================================================================
@@ -149,10 +119,6 @@ autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set softtabstop=2
-
-" open wide ... 2*80 + 5 
-set co=165
-set lines=45
 
 " ================ Completion =======================
 set wildmode=list:longest
@@ -195,7 +161,13 @@ map <c-h> <c-w>h
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 
-nnoremap <silent> <Leader>/ :nohlsearch<CR>
+" Tab and Shift+Tab move to the windows on the right/left
+noremap <Tab> <c-w><c-w>
+noremap <S-Tab> <c-w>W
+
+" Space and Shift+Space for scrolling 
+noremap <Space> <C-d>
+noremap <S-Space> <C-u>
 
 " cscope
 if has("cscope")
@@ -387,8 +359,7 @@ unmap <F4>
 map f <nop>
 unmap f
 
-noremap <F2> :NERDTreeTabsToggle<return>
-noremap <F3> :TagbarToggle<return>
+nnoremap q :q<CR>
 
 " disable jungo stuff
 let g:dont_load_vimispell=1

@@ -60,10 +60,9 @@ nnoremap <D-]> f]ci]
 imap <C-a> <esc>wa
 
 " ==== NERD tree
-" Cmd-Shift-N for nerd tree
-nmap <D-N> :NERDTreeToggle<CR>
-" Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 30<CR>
+noremap <F2> :NERDTreeTabsToggle<CR>
+" Open the project tree and expose current file in the nerdtree with Shift-F2
+nnoremap <silent> <S-F2> :NERDTreeFind<CR>:vertical res 30<CR>
 
 " ,q to toggle quickfix window (where you have stuff like GitGrep)
 " ,oq to open it back up (rare)
@@ -80,7 +79,7 @@ nmap <silent> <leader>vr :so %<CR>:echo 'Reloaded!'<CR>
 nnoremap <D-*> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 "Clear current search highlight by double tapping //
-nmap <silent> // :nohlsearch<CR>
+nmap <silent> \\ :nohlsearch<CR>
 
 " Spelling related stuff
 nnoremap <leader>s :set spell!<CR>
