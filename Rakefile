@@ -25,8 +25,8 @@ task :install do
     install_one_link(target, source)
   end
 
-  install_vundle()
-  update_vundle()
+  vundle_install unless vundle_installed?
+  vundle_update()
 end
 
 desc 'Check is all needed software is installed'
@@ -41,18 +41,21 @@ task :check do
 end
 
 desc 'Update vim bundles managed by vundle.'
-task :update_vundles do 
-  update_vundle
+task :vundle_update do 
+  vundle_update
 end
 
-def install_vundle
-  return if File.exist?("#{File.dirname(__FILE__)}/vim/vim/bundle/vundle")
+def vundle_installed?
+  File.exist?("#{File.dirname(__FILE__)}/vim/vim/bundle/vundle")
+end
+
+def vundle_install
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
     `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
   end
 end
 
-def update_vundle
+def vundle_update
   `vim --noplugin -u vim/vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
 end
 
