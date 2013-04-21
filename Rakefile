@@ -164,7 +164,11 @@ def install_fonts
   install_one_link(target, source)
 
   # I think there is nothing to do for the MacOS
-  `fc-cache -fv` if on_linux
+  if on_linux
+    log.info 'updating font cache ...'
+    `fc-cache -fv`
+    log.info 'done.'
+  end
 end
 
 def on_linux
