@@ -145,7 +145,7 @@ end
 
 def install_fonts
 
-  source = "#{this_dir}/fonts"
+  source = "#{File.dirname(__FILE__)}/fonts"
   case
   when on_linux
     target = "#{home}/.fonts/my_fonts"
@@ -171,8 +171,4 @@ end
 
 def home
   "#{ENV['HOME']}"
-end
-
-def this_dir
-  "#{File.dirname(__FILE__)}"
 end

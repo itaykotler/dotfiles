@@ -11,7 +11,7 @@ end
 def install_reattach_to_user_namespace
 
   bin_file = 'reattach-to-user-namespace'
-  FileUtils.cd("#{this_dir}/source/tmux-MacOSX-pasteboard") do
+  FileUtils.cd("#{File.dirname(__FILE__)}/source/tmux-MacOSX-pasteboard") do
     `make "#{bin_file}"`
     source = File.absolute_path(bin_file)
     target = "#{home}/bin/#{bin_file}"
@@ -22,7 +22,7 @@ end
 def install_git_scripts
 
   bin_file = 'git-delete-submodule'
-  FileUtils.cd("#{this_dir}/source/cespare-git-scripts") do
+  FileUtils.cd("#{File.dirname(__FILE__)}/source/cespare-git-scripts") do
     source = File.absolute_path(bin_file)
     target = "#{home}/bin/#{bin_file}"
     install_one_link(target, source)
