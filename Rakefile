@@ -148,6 +148,7 @@ def install_fonts
   source = "#{File.dirname(__FILE__)}/fonts"
   case
   when on_linux
+    FileUtils.mkdir("#{home}/.fonts") unless File.exist?("#{home}/.fonts")
     target = "#{home}/.fonts/my_fonts"
   when on_mac
     target = "#{home}/Library/Fonts/my_fonts"
