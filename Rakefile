@@ -58,13 +58,17 @@ def vundle_installed?
 end
 
 def vundle_install
+  log.info 'Installing Vundle...'
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
     `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
   end
+  log.info 'done'
 end
 
 def vundle_update
+  log.info 'Updating Vundle...'
   `vim --noplugin -u vim/vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
+  log.info 'done.'
 end
 
 def linkables
@@ -92,7 +96,7 @@ def install_one_link(target, source)
 
   if link_already_there?(target, source)
     log.debug('the link is already there, skiping.')
-    log.info('link: OK')
+    log.info('link: done')
     return
   end
 
