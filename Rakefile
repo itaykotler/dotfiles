@@ -17,11 +17,10 @@ end
 
 desc 'Install configuration, binaries, plugging, etc.'
 task :install do
-  log.info 'Checking for updates ...'
   if self_update_needed?
-    log.info 'Updates are available. Please run \'git pull\''
-  else
-    log.info 'OK'
+    puts 'Looks like your git repo is either ahead or behind or dirty, ' \
+      'wanna stop and lean? [y]es/[n]o:'
+    exit if STDIN.gets.chomp == 'y'
   end
 
   linkables.each do |linkable|
@@ -121,8 +120,19 @@ def submodules_update
 end
 
 def self_update_needed?
+  check_git_status[0]
+end
+
+def check_git_status
+  log.debug 'Checking git status ...'
+
   `git remote update`
   status = `git status -b --porcelain`
-  #status =~ /\[ahead \d+\]/
-  status =~ /\[behind \d+\]/
+  ahead = status =~ /\[ahead \d+\]/
+  behind = status =~ /\[behind \d+\]/
+  dirty = status =~ /^M|^??/
+
+  log.debug status
+  log.debug("behind:%s ahead:%s dirty:%s" % [!behind.nil?, !ahead.nil?, !dirty.nil?])
+  [behind, ahead, dirty]
 end
