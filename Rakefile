@@ -143,7 +143,8 @@ def check_git_status
   dirty = status =~ /^\sM|^\s\?\?/
 
   log.debug status
-  log.debug("behind:%s ahead:%s dirty:%s" % [!behind.nil?, !ahead.nil?, !dirty.nil?])
+  log.debug("behind:%s ahead:%s dirty:%s" %
+            [!behind.nil?, !ahead.nil?, !dirty.nil?])
   [behind, ahead, dirty]
 end
 
