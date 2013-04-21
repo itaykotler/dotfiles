@@ -156,3 +156,19 @@ def install_fonts
   # I think there is nothing to do for the MacOS
   `fc-cache -fv` if on_linux
 end
+
+def on_linux
+  RUBY_PLATFORM.downcase.include?('linux')
+end
+
+def on_mac
+  RUBY_PLATFORM.downcase.include?('darwin')
+end
+
+def home
+  "#{ENV['HOME']}"
+end
+
+def this_dir
+  "#{File.dirname(__FILE__)}"
+end
