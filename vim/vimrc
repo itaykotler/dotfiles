@@ -75,18 +75,10 @@ set smarttab
 set shiftwidth=2
 set expandtab
 
-" Ruby
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType ruby set softtabstop=2
-
 " Set status line
 "set statusline=[%02n]%y%f\ %(\[%M%R%H]%)%=\ %4l,%02c%2V\ %P%*
 " Always display a status line at the bottom of the window
 "set laststatus=2
-
-filetype plugin on
-filetype indent on
 
 " Display tabs and trailing spaces visually
 "set list listchars=tab:\ \ ,trail:·
@@ -348,8 +340,6 @@ endfunction
 " Jungo stuff
 set cinoptions=:0,(s,u0,U1
 "unmap Jungo mapped keys that I don't need
-unmap <F3>
-unmap <F4>
 map f <nop>
 unmap f
 
