@@ -19,7 +19,7 @@ desc 'Install configuration, binaries, plugging, etc.'
 task :install do
   if self_update_needed?
     puts 'Looks like your git repo is either ahead or behind or dirty, ' \
-      'wanna stop and lean? [y]es/[n]o:'
+      'wanna stop and fix? [y]es/[n]o:'
     exit if STDIN.gets.chomp == 'y'
   end
 
