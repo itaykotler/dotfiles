@@ -23,6 +23,8 @@ task :install do
     exit if STDIN.gets.chomp == 'y'
   end
 
+  install_fonts
+
   linkables.each do |linkable|
     file = linkable.split('/').last
     source = "#{ENV["PWD"]}/#{linkable}"
@@ -135,4 +137,22 @@ def check_git_status
   log.debug status
   log.debug("behind:%s ahead:%s dirty:%s" % [!behind.nil?, !ahead.nil?, !dirty.nil?])
   [behind, ahead, dirty]
+end
+
+def install_fonts
+
+  source = "#{this_dir}/fonts"
+  case
+  when on_linux
+    target = "#{home}/.fonts/my_fonts"
+  when on_mac
+    target = "#{home}/Library/Fonts/my_fonts"
+  else
+    raise 'We are running on an unknown platform!'
+  end
+
+  install_one_link(target, source)
+
+  # I think there is nothing to do for the MacOS
+  `fc-cache -fv` if on_linux
 end
