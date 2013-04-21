@@ -136,7 +136,7 @@ def check_git_status
   status = `git status -b --porcelain`
   ahead = status =~ /\[ahead \d+\]/
   behind = status =~ /\[behind \d+\]/
-  dirty = status =~ /^M|^??/
+  dirty = status =~ /^\sM|^\s\?\?/
 
   log.debug status
   log.debug("behind:%s ahead:%s dirty:%s" % [!behind.nil?, !ahead.nil?, !dirty.nil?])
