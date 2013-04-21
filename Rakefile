@@ -15,7 +15,7 @@ def log
   @logger
 end
 
-desc 'Install configuration, binaries, plagins, etc.'
+desc 'Install configuration, binaries, plugging, etc.'
 task :install do
   log.info 'Checking for updates ...'
   if self_update_needed?
