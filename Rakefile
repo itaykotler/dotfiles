@@ -48,6 +48,10 @@ task :check do
   end
 end
 
+task :install_fonts do
+  install_fonts
+end
+
 desc 'Update vim bundles managed by vundle.'
 task :vundle_update do 
   vundle_update
