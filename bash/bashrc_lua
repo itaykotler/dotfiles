@@ -1,0 +1,3 @@
+export LUA_PATH=";;$LUA_PATH;/path/to/build/?.lua"
+export LUA_CPATH=";;$LUA_CPATH;/path/to/build/?.so"
+export LUA_INIT='require "rlcompleter"'

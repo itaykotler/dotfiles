@@ -1,0 +1,25 @@
+# Override /etc/X11/app-defaults/XTerm* settings
+if [ -f ~/.Xresources ] ; then
+	xrdb -remove
+	xrdb -merge ~/.Xresources
+fi
+
+# normal username color is green
+USERNAME_COLOR='00;32m'
+AT_COLOR='01;33m'
+HOST_COLOR='01;00m'
+PWD_COLOR='01;34m'
+
+# root username color is red
+if [ ${UID} -eq 0 ]; then
+	USERNAME_COLOR='01;31m'
+fi
+
+PS1='\n[\[\033[${USERNAME_COLOR}\]\u\[\033[00m\]\[\033[${AT_COLOR}\]@\[\033[00m\]\[\033[${HOST_COLOR}\]\h\[\033[00m\]][\[\033[${PWD_COLOR}\]\w\[\033[00m\]]\n>> ' 
+
+# TODO: remove into mac os specific file
+# This is for MAC OS
+# this makes ls colorize the output 
+# the same can be done with 'ls -G'
+export CLICOLOR=1
+export LSCOLORS=exgxcxdxbxegedabagacad

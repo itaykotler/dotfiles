@@ -82,6 +82,7 @@ def linkables
   linkables += Dir.glob('vim/*')
   linkables += Dir.glob('irb/*')
   linkables += Dir.glob('ruby/*')
+  linkables += Dir.glob('bash/*')
   # linkables += Dir.glob('ctags/*') if want_to_install?('ctags config (better js/ruby support)')
   # linkables += Dir.glob('vimify/*') if want_to_install?('vimification of mysql/irb/command line')
   # linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')

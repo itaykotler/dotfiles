@@ -1,0 +1,69 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
+export TERM=xterm-256color
+export EDITOR='gvim -f'
+export DIFFPROG="gvim -df +0 -s `echo ~/.vim/diftop.vim`"
+#export DIFFPROG='xxdiff'
+export CCACHE='/usr/local/bin/ccache'
+export PROJECT_PATH=~/project
+export JPKG_AUTO_UPDATE_RND_TOOLS=1
+
+if [ -f ~/.bashrc_typos_aliases_and_functions ]; then
+  source ~/.bashrc_typos_aliases_and_functions
+fi
+
+if [ -f ~/.bashrc_colors_and_ps1 ]; then
+  source ~/.bashrc_colors_and_ps1
+fi
+
+# Put secret configuration settings in ~/.secrets
+if [ -f ~/.secrets ]; then
+  source ~/.secrets
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+if [ -f ~/.bashrc_lua ]; then
+  source ~/.bashrc_lua
+fi
+
+# ruby RVM bootstrap
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# TODO: remove into mac os specific file
+# This is for MAC OS
+alias octave="/Applications/Octave.app/Contents/Resources/bin/octave"
+alias gnuplot="/Applications/Gnuplot.app/Contents/Resources/bin/gnuplot"
+if [ -f /opt/local/etc/bash_completion ]; then
+	. /opt/local/etc/bash_completion
+fi  
+
+# This kind of linux specific
+if [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+fi  
+
