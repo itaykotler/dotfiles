@@ -12,6 +12,7 @@ alias amke=make
 #
 # aliases
 #------------
+alias g='gvim'
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -al'
