@@ -1,3 +1,8 @@
-export LUA_PATH=";;$LUA_PATH;/path/to/build/?.lua"
-export LUA_CPATH=";;$LUA_CPATH;/path/to/build/?.so"
-export LUA_INIT='require "rlcompleter"'
+RLCOMPLETER_PATH="/Users/rony/Developer/lua-rlcompleter"
+LUAROCKS_PATH="/opt/local/share/luarocks/share/lua/5.1/?.lua;/opt/local/share/luarocks/share/lua/5.1/?/init.lua"
+LUAROCKS_CPATH="/opt/local/share/luarocks/lib/lua/5.1/?.so;/Users/rony/.luarocks/lib/lua/5.1/?.so"
+
+export LUA_PATH=";;$LUA_PATH;$LUAROCKS_PATH;$RLCOMPLETER_PATH/?.lua"
+export LUA_CPATH=";;$LUA_CPATH;$LUAROCKS_CPATH;$RLCOMPLETER_PATH/?.so"
+export LUA_INIT="@/Users/rony/.lua.rc"
+
