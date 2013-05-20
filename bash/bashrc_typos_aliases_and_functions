@@ -50,8 +50,8 @@ alias G='rt gvim'
 alias pump='rt pump --no-dns'
 alias pumpg='rt pump --no-dns --no-gateway'
 
-alias vncstart_full='vncserver -geometry 1680x1050 -depth 24'
-alias vncstart='vncserver -geometry 1680x1000 -depth 24'
+alias vncstart_full='vncserver -geometry 1280x1024 -depth 24'
+alias vncstart='vncserver -geometry 1280x975 -depth 24'
 alias vncstop='vncserver -kill :1 || rm -rf /tmp/.X1-lock /tmp/.X11-unix/X1'
 
 
