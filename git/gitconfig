@@ -53,7 +53,7 @@
   ps = push                         # push
 
   # rebase
-	ri = rebase --interactive
+  ri = rebase --interactive
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
 
