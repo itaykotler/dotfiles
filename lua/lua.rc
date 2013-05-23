@@ -38,17 +38,7 @@ function vardump(value, depth, key)
   end
 end
 
-a = {
-  xxx_key = 1,
-  yyy_key = 'rony eto ya',
-  zzz_key = {
-    a1 = 'da',
-    a2 = 'net',
-    a3 = 42,
-    inside = {
-      i5 = 'aaa',
-      i6 = 'bbb',
-      i7 = 'ccc',
-    },
-  },
-}
+-- load a local loadme.lua if present
+  local f, err = loadfile('loadme.lua')
+  if not f then f() end
+
