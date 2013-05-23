@@ -71,7 +71,7 @@ end
 
 def vundle_update
   log.info 'Updating Vundle...'
-  `vim --noplugin -u vim/vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall`
+  system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
   log.info 'done.'
 end
 
