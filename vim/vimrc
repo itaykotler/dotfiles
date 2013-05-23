@@ -75,11 +75,6 @@ set smarttab
 set shiftwidth=2
 set expandtab
 
-" Set status line
-"set statusline=[%02n]%y%f\ %(\[%M%R%H]%)%=\ %4l,%02c%2V\ %P%*
-" Always display a status line at the bottom of the window
-"set laststatus=2
-
 " Display tabs and trailing spaces visually
 "set list listchars=tab:\ \ ,trail:·
 
@@ -154,6 +149,8 @@ noremap <S-Tab> <c-w>W
 " Space and Shift+Space for scrolling 
 noremap <Space> <C-d>
 noremap <S-Space> <C-u>
+
+set lazyredraw
 
 " cscope
 if has("cscope")
