@@ -184,9 +184,9 @@ nmap <unique><Leader>rv :execute ':!review diff' TokenUnderCursor(1)<cr><cr>
 if &diff
 
   " next change
-  map <space> ]czz
+  nnoremap <space> ]czz
   " previous change
-  map <tab> [czz
+  nnoremap <S-Space> [czz
 
   noremap <silent> <F5> :diffup<cr>
   noremap <silent> <F11> :diffget<cr>
