@@ -73,6 +73,8 @@ nnoremap Q <nop>
 
 "(v)im (r)eload
 nmap <silent> <leader>vr :so %<CR>:echo 'Reloaded!'<CR>
+"(v)imrc (s)ource
+nmap <silent> <leader>vs :so $MYVIMRC<CR>:echo 'Reloaded!'<CR>
 
 " Apple-* Highlight all occurrences of current word (like '*' but without moving)
 " http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
