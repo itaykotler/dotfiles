@@ -26,11 +26,14 @@ if has("gui_running")
   "===============================================================================
   if has("gui_running")
     if has('mac') || has('macunix')
+      " set guifont=Inconsolata-dz-Powerline:h18
+      " set guifont=PragmataPro:h18
       set guifont=Anonymous\ Pro:h18
       "set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
     elseif has('unix')
-      "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+      " set guifont=PragmataPro:h18
       set guifont=Anonymous\ Pro\ 14
+      "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
       "set guifont=Monaco:h14
       "set guifont=Courier New:h13
       "set guifont=Menlo:h14
