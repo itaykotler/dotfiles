@@ -194,6 +194,7 @@ if &diff
 
   " q -> quit all the windows
   cnoremap q qa
+  noremap q :qa<CR>
 
   " two cursor lines are distracting
   set nocursorline
@@ -340,7 +341,7 @@ set cinoptions=:0,(s,u0,U1
 map f <nop>
 unmap f
 
-nnoremap q :q<CR>
+nmap q :q<CR>
 
 " disable jungo stuff
 let g:dont_load_vimispell=1
