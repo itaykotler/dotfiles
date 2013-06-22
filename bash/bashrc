@@ -46,6 +46,16 @@ if [ -f ~/.bashrc_lua ]; then
   source ~/.bashrc_lua
 fi
 
+# This is the bash_completion location on Mac
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# This is the bash_completion location on Linux
+if [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+fi  
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -53,16 +63,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# TODO: remove into mac os specific file
-# This is for MAC OS
-alias octave="/Applications/Octave.app/Contents/Resources/bin/octave"
-alias gnuplot="/Applications/Gnuplot.app/Contents/Resources/bin/gnuplot"
-if [ -f /opt/local/etc/bash_completion ]; then
-	. /opt/local/etc/bash_completion
-fi  
-
-# This kind of linux specific
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi  
 
