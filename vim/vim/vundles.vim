@@ -19,7 +19,7 @@ Bundle "gmarik/vundle"
 " All your bundles here
 
 " Ruby, Rails, Rake...
-Bundle "astashov/vim-ruby-debugger"
+"Bundle "astashov/vim-ruby-debugger"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "skwp/vim-ruby-conque"
 Bundle "tpope/vim-rails.git"
@@ -34,7 +34,7 @@ Bundle "pangloss/vim-javascript"
 
 " LUA 
 Bundle "xolox/vim-easytags"
-Bundle "rkowal/Lua-Omni-Vim-Completion"
+"Bundle "rkowal/Lua-Omni-Vim-Completion" -- low quality
 
 " Html, Xml, Css, Markdown...
 Bundle "aaronjensen/vim-sass-status.git"
@@ -99,7 +99,7 @@ Bundle "tpope/vim-repeat.git"
 Bundle "tpope/vim-surround.git"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-scripts/AnsiEsc.vim.git"
-Bundle "vim-scripts/AutoTag.git"
+" Bundle "vim-scripts/AutoTag.git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "vim-scripts/sudo.vim"
 "Bundle "xsunsmile/showmarks.git" -- don't
@@ -121,9 +121,9 @@ Bundle "vim-scripts/argtextobj.vim"
 " Cosmetics, color scheme, Powerline...
 Bundle "chrisbra/color_highlight.git"
 Bundle "skwp/vim-colors-solarized"
-"Bundle "skwp/vim-powerline.git"
+Bundle "skwp/vim-powerline.git"
 "Bundle "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim/'}
-Bundle "Lokaltog/vim-powerline"
+"Bundle "Lokaltog/vim-powerline"
 Bundle "vim-scripts/TagHighlight.git"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "slim-template/vim-slim.git"
