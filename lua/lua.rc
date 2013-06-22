@@ -40,5 +40,5 @@ end
 
 -- load a local loadme.lua if present
   local f, err = loadfile('loadme.lua')
-  if not f then f() end
+  if f then f() end
 
