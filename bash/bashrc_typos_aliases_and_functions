@@ -37,6 +37,10 @@ alias qqq="cd ../../.."
 alias ks='killall ssh'
 alias psg='ps -eflw | grep'
 
+# This is for MAC OS
+alias octave="/Applications/Octave.app/Contents/Resources/bin/octave"
+alias gnuplot="/Applications/Gnuplot.app/Contents/Resources/bin/gnuplot"
+
 #
 # > Jungo related aliases
 #
@@ -54,6 +58,21 @@ alias vncstart_full='vncserver -geometry 1280x1024 -depth 24'
 alias vncstart='vncserver -geometry 1280x975 -depth 24'
 alias vncstop='vncserver -kill :1 || rm -rf /tmp/.X1-lock /tmp/.X11-unix/X1'
 
+#
+# rainbow/rcaf
+#
+alias gs='git status'
+alias gco='git checkout'
+alias gc='git commit'
+alias gd='git diff'
+alias gt='git difftool'
+alias gl='git log'
+alias gb='git branch'
+
+#
+# rainbow/rcaf
+#
+alias uprebase='git co master && git pull upstream master && git push origin master'
 
 #
 # functions
