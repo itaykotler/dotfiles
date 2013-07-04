@@ -27,14 +27,11 @@ Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "vim-ruby/vim-ruby.git"
 Bundle "vim-scripts/Specky.git"
+Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
 Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
-
-" LUA 
-Bundle "xolox/vim-easytags"
-"Bundle "rkowal/Lua-Omni-Vim-Completion" -- low quality
 
 " Html, Xml, Css, Markdown...
 Bundle "aaronjensen/vim-sass-status.git"
@@ -75,6 +72,7 @@ Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/IndexedSearch"
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
+Bundle "terryma/vim-multiple-cursors"
 
 " General vim improvements
 Bundle "MarcWeber/vim-addon-mw-utils.git"
@@ -86,7 +84,6 @@ Bundle "mattn/webapi-vim.git"
 Bundle "rking/ag.vim"
 Bundle "scrooloose/nerdtree.git"
 Bundle "scrooloose/syntastic.git"
-Bundle "sjbach/lusty.git"
 Bundle "sjl/gundo.vim"
 Bundle "skwp/YankRing.vim"
 Bundle "skwp/greplace.vim"
@@ -99,7 +96,7 @@ Bundle "tpope/vim-repeat.git"
 Bundle "tpope/vim-surround.git"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-scripts/AnsiEsc.vim.git"
-" Bundle "vim-scripts/AutoTag.git"
+"Bundle "vim-scripts/AutoTag.git"
 Bundle "vim-scripts/lastpos.vim"
 Bundle "vim-scripts/sudo.vim"
 "Bundle "xsunsmile/showmarks.git" -- don't
@@ -120,7 +117,9 @@ Bundle "vim-scripts/argtextobj.vim"
 
 " Cosmetics, color scheme, Powerline...
 Bundle "chrisbra/color_highlight.git"
-Bundle "skwp/vim-colors-solarized"
+" Bundle "skwp/vim-colors-solarized"
+" Bundle "altercation/vim-colors-solarized.git"
+Bundle "Greduan/vim-colors-solarized.git"
 Bundle "skwp/vim-powerline.git"
 "Bundle "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim/'}
 "Bundle "Lokaltog/vim-powerline"
@@ -132,6 +131,9 @@ Bundle "tpope/vim-rvm.git"
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "jpo/vim-railscasts-theme"
 Bundle "vim-scripts/xoria256.vim"
+Bundle "gerw/vim-HiLinkTrace.git"
+
+Bundle "xolox/vim-easytags"
 
 " Customization
 " The plugins listed in ~/.vim/.vundles.local will be added here to
@@ -142,4 +144,3 @@ endif
 
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on
-
