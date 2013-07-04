@@ -72,7 +72,7 @@ alias gb='git branch'
 #
 # rainbow/rcaf
 #
-alias uprebase='git co master && git pull upstream master && git push origin master'
+alias upmaster='git co master && git pull upstream master && git push origin master'
 
 #
 # functions
