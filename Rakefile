@@ -28,7 +28,7 @@ task :install do
   linkables.each do |linkable|
     file = linkable.split('/').last
     source = "#{ENV["PWD"]}/#{linkable}"
-    target = "#{ENV["HOME"]}/.#{file}"
+    target = "#{home}/.#{file}"
 
     install_one_link(target, source)
   end
@@ -71,7 +71,7 @@ end
 
 def vundle_update
   log.info 'Updating Vundle...'
-  system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
+  system "vim --noplugin -u #{home}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
   log.info 'done.'
 end
 
