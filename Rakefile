@@ -48,10 +48,6 @@ task :check do
   end
 end
 
-task :install_fonts do
-  install_fonts
-end
-
 desc 'Update vim bundles managed by vundle.'
 task :vundle_update do 
   vundle_update
@@ -148,6 +144,10 @@ def check_git_status
   log.debug("behind:%s ahead:%s dirty:%s" %
             [!behind.nil?, !ahead.nil?, !dirty.nil?])
   [behind, ahead, dirty]
+end
+
+task :install_fonts do
+  install_fonts
 end
 
 def install_fonts
