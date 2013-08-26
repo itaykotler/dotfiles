@@ -46,15 +46,19 @@ if [ -f ~/.bashrc_lua ]; then
   source ~/.bashrc_lua
 fi
 
-# This is the bash_completion location on Mac
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-# This is the bash_completion location on Linux
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi  
+# bash_completion
+case $(uname -s) in
+  Darwin|FreeBSD)
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      . $(brew --prefix)/etc/bash_completion
+    fi
+    ;;
+  Linux)
+    if [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+    fi  
+    ;;
+esac
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
