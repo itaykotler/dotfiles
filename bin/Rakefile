@@ -6,6 +6,7 @@ task :install do
 
   install_reattach_to_user_namespace if on_mac
   install_git_scripts
+  install_scripts_links
 end
 
 def bin_dir
@@ -29,6 +30,15 @@ def install_git_scripts
   FileUtils.cd("#{File.dirname(__FILE__)}/source/cespare-git-scripts") do
     source = File.absolute_path(bin_file)
     target = "#{bin_dir}/#{bin_file}"
+    install_one_link(target, source)
+  end
+end
+
+def install_scripts_links
+  scripts = Dir.glob("#{File.dirname(__FILE__)}/scripts/*")
+
+  scripts.each do |source|
+    target = "#{bin_dir}/#{source.split('/').last}"
     install_one_link(target, source)
   end
 end
