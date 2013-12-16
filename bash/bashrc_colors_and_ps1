@@ -1,8 +1,14 @@
 # Override /etc/X11/app-defaults/XTerm* settings
-if [ -f ~/.Xresources ] ; then
-	xrdb -remove
-	xrdb -merge ~/.Xresources
-fi
+case $(uname -s) in
+  Darwin|FreeBSD) ;;
+  NetBSD|OpenBSD) ;;
+  Linux)
+    if [ -f ~/.Xresources ] ; then
+      xrdb -remove
+      xrdb -merge ~/.Xresources
+    fi
+  ;;
+esac
 
 # normal username color is green
 USERNAME_COLOR='00;32m'
