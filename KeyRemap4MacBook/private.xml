@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>VIRTUAL_BOX</appname>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+  </appdef>
+
+  <item>
+    <name>Private Settings</name>
+
+    <item>
+      <name>Virtual Machines</name>
+      <item>
+        <name>Change F11 to be F11</name>
+        <identifier>private.app_vm_F11</identifier>
+        <only>VIRTUALMACHINE</only>
+        <autogen>--KeyToKey-- KeyCode::F11, KeyCode::F11</autogen>
+      </item>
+
+      <item>
+        <name>Change Command_L+L to Control+L</name>
+        <identifier>private.app_vm_commandLL</identifier>
+        <only>VIRTUALMACHINE</only>
+        <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::COMMAND_L, KeyCode::L, ModifierFlag::CONTROL_L</autogen>
+      </item>
+      <item>
+        <name>Change Command_L+T to Control+T</name>
+        <identifier>private.app_vm_commandTT</identifier>
+        <only>VIRTUAL_BOX</only>
+        <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::COMMAND_L, KeyCode::T, ModifierFlag::CONTROL_L</autogen>
+      </item>
+    </item>
+
+    <item>
+      <name>VirtualBox</name>
+      <item>
+        <name>Map Cmd+Tab into capture release + Cmd+Tab</name>
+        <identifier>private.app_virtual_box_command_tab</identifier>
+        <only>VIRTUAL_BOX</only>
+        <autogen>--KeyToKey-- KeyCode::TAB, ModifierFlag::COMMAND_L,
+          KeyCode::CONTROL_L, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+      </item>
+    </item>
+
+    <item>
+      <name>For MacBook series internal keyboard (vid/pid: 0x05ac,0x0236)</name>
+      <item>
+        <name>Option_R to Control_R on MacBook pro (vid/pid: 0x05ac,0x0236)</name>
+        <identifier>remap.optionR_to_controlR_on_mac_book_pro_0x0236</identifier>
+        <block>
+          <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0236</device_only>
+          <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
+        </block>
+      </item>
+    </item>
+  </item>
+
+  <item>
+    <name>Swap F19 for Scroll Lock</name>
+    <identifier>private.swap_f19_to_scroll_lock</identifier>
+    <autogen>__KeyToKey__ 
+    KeyCode::F19,
+    KeyCode::PC_SCROLLLOCK
+    </autogen>
+  </item>
+
+</root>
