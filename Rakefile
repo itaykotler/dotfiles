@@ -62,13 +62,13 @@ def vundle_install
   FileUtils.cd("#{File.dirname(__FILE__)}/vim") do
     `git clone https://github.com/gmarik/vundle.git vim/bundle/vundle`
   end
-  log.info 'done'
+  log.debug 'done'
 end
 
 def vundle_update
   log.info 'Updating Vundle...'
   system "vim --noplugin -u #{home}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
-  log.info 'done.'
+  log.debug 'done.'
 end
 
 def linkables
@@ -98,7 +98,7 @@ def install_one_link(target, source)
 
   if link_already_there?(target, source)
     log.debug('the link is already there, skiping.')
-    log.info('link: done')
+    log.debug('link: done')
     return
   end
 
@@ -169,7 +169,7 @@ def install_fonts
   if on_linux
     log.info 'updating font cache ...'
     `fc-cache -fv`
-    log.info 'done.'
+    log.debug 'done.'
   end
 end
 
