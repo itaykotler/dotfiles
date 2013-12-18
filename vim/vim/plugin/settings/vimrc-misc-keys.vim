@@ -64,7 +64,7 @@ noremap <F2> :NERDTreeTabsToggle<CR>
 " Open the project tree and expose current file in the nerdtree with Shift-F2
 nnoremap <silent> <S-F2> :NERDTreeFind<CR>:vertical res 30<CR>
 
-" ,q to toggle quickfix window (where you have stuff like GitGrep)
+" ,q to toggle quickfix window
 " ,oq to open it back up (rare)
 nmap <silent> <leader>qc :cclose<CR>
 nmap <silent> <leader>qo :copen<CR>
