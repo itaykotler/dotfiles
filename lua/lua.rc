@@ -1,5 +1,5 @@
-require('rlcompleter')
-pp = require('serpent')
+-- require('rlcompleter')
+-- pp = require('serpent')
 
 function vardump(value, depth, key)
   local linePrefix = ""
